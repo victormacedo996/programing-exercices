@@ -6,9 +6,9 @@ Make a Program that asks for the 3 sides of a triangle. The program should infor
      Equilateral Triangle: three equal sides;
      Isosceles Triangle: any two equal sides;
      Scalene Triangle: three different sides;
-    """"
-
-print ('Exercise 1 - triangle sides and classification')
+    """
+    
+print ('Triangle sides and classification')
 def getFloat(Float):
     while True:
        try:
