@@ -1,4 +1,4 @@
-# Programing exercises
+# Programing exercices
 
 
 ## Objective
