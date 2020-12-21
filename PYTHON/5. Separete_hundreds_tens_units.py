@@ -19,37 +19,51 @@ def getInteger(integer):
        except ValueError:
            print('You must enter an integer')
 
-
-number = getInteger('Enter a number: ')
-number = str(number)
-
-
-
-if len(number) == 1:
+def separate_one_digit_number (number):
     if int(number) > 1:
        print (f"{number} units")
     else:
         print(f"{number} unit")
-    
-elif len(number) == 2:
+        
+def separate_two_digit_number(number):
     if int(number[0]) > 1 and int(number[1]) > 1:
         print(f"{number[0]} tens and {number[1]} units")
-    elif int(number[0]) == 1 and int(number[1]) > 1:
+    elif int(number[0]) <= 1 and int(number[1]) > 1:
         print(f"{number[0]} ten and {number[1]} units")
-    elif int(number[0]) > 1 and int(number[1]) == 1:
+    elif int(number[0]) > 1 and int(number[1]) <= 1:
         print(f"{number[0]} tens and {number[1]} unit")
-elif len(number) == 3:
-    if int(number[0]) >= 1 and int(number[1]) >= 1 and int(number[2]) >= 1:
+    else:
+        print(f"{number[0]} ten and {number[1]} unit")
+
+def separate_three_digit_number(number):
+    if int(number[0]) > 1 and int(number[1]) > 1 and int(number[2]) > 1:
         print(f"{number[0]} hundreds, {number[1]} tens and {number[2]} units")
-    elif int(number[0]) == 1 and int(number[1]) >= 1 and int(number[2]) >= 1:
+    elif int(number[0]) <= 1 and int(number[1]) > 1 and int(number[2]) > 1:
         print(f"{number[0]} hundred, {number[1]} tens and {number[2]} units")
-    elif int(number[0]) >= 1 and int(number[1]) <= 1 and int(number[2]) >= 1:
-        print(f"{number[0]} hundreds, {number[1]} ten and {number[2]} units")
-    elif int(number[0]) == 1 and int(number[1]) <= 1 and int(number[2]) >= 1:
+    elif int(number[0]) <= 1 and int(number[1]) <= 1 and int(number[2]) > 1:
         print(f"{number[0]} hundred, {number[1]} ten and {number[2]} units")
-    elif int(number[0]) == 1 and int(number[1]) >= 1 and int(number[2]) <= 1:
+    elif int(number[0]) <= 1 and int(number[1]) <= 1 and int(number[2]) <= 1:
+        print(f"{number[0]} hundred, {number[1]} ten and {number[2]} unit")
+    elif int(number[0]) > 1 and int(number[1]) <= 1 and int(number[2]) <= 1:
+        print(f"{number[0]} hundreds, {number[1]} ten and {number[2]} unit")
+    elif int(number[0]) > 1 and int(number[1]) > 1 and int(number[2]) <= 1:
+        print(f"{number[0]} hundreds, {number[1]} tens and {number[2]} unit")
+    elif int(number[0]) <= 1 and int(number[1]) > 1 and int(number[2]) <= 1:
         print(f"{number[0]} hundred, {number[1]} tens and {number[2]} unit")
-    
+    elif int(number[0]) > 1 and int(number[1]) <= 1 and int(number[2]) > 1:
+        print(f"{number[0]} hundreds, {number[1]} ten and {number[2]} units")
+
+
+number = getInteger('Enter a number: ')
+number = str(number)
+
+if len(number) == 1:
+    separate_one_digit_number(number)
+elif len(number) == 2:
+    separate_two_digit_number(number)
+elif len(number) == 3:
+    separate_three_digit_number(number)
+print('\n')
 
 lis = [326, 300, 100, 320, 310,305, 301, 101, 311, 111, 25, 20, 10, 21, 11, 1, 7, 16]
 
@@ -59,32 +73,9 @@ for item in lis:
     number = str(item)
     print(f"Number: {number}")
     if len(number) == 1:
-        number = int(number)
-        if number > 1:
-           print(f"{number} units")
-        else:
-            print(f"{number} unit")
+        separate_one_digit_number(number)
     elif len(number) == 2:
-        tens = int(number[0])
-        units = int(number[1])
-        if tens >= 1 and units >= 1:
-            print(f"{tens} tens and {units} units")
-        elif tens == 1 and units >= 1:
-            print(f"{tens} ten and {units} unit")
-        else:
-            print(f"{tens} ten and {units} unit")
+        separate_two_digit_number(number)
     elif len(number) == 3:
-        hundred = int(number[0])
-        tens = int(number[1])
-        units = int(number[2])
-        if hundred >= 1 and tens >= 1 and units >= 1:
-            print(f"{hundred} hundreds, {tens} tens and {units} units")
-        elif hundred == 1 and tens >= 1 and units >= 1:
-            print(f"{hundred} hundred, {tens} tens and {units} units")
-        elif hundred >= 1 and tens <= 1 and units >= 1:
-            print(f"{hundred} hundreds, {tens} ten and {units} units")
-        elif hundred == 1 and tens <= 1 and units >= 1:
-            print(f"{hundred} hundred, {tens} ten and {units} units")
-        elif hundred == 1 and tens >= 1 and units <= 1:
-            print(f"{hundred} hundred, {tens} tens and {units} unit")
+        separate_three_digit_number(number)
     print('\n')
