@@ -58,7 +58,7 @@ def FGTS(salary): ## Brazilian tax
     FGTS = salary * 0.11
     return FGTS
 
-def INSS(Salary): ## Brazilian tax
+def INSS(salary): ## Brazilian tax
     INSS = salary * INSS_tax / 100
     return INSS
 
@@ -68,8 +68,8 @@ def syndicate(salary):
 
 
 ## Getting inputs
-value_per_hour = getFloat('How much working hour of the employee? ')
-hours = getInteger ('For haw many hours do he/she works? ')
+value_per_hour = getFloat('How much is the working hour of the employee? ')
+hours = getInteger ('For how many hours do he/she works? ')
 INSS_tax = getFloat(f"How many % is the INSS tax? ")
 
 ## Making the calculations with the inputs
@@ -84,7 +84,7 @@ liquid_salary = salary - income_tax - INSS - syndicate
 ## Final print
 print(f"Brute salary: ({hours} * {value_per_hour})                  : R${salary}")
 print(f"(-) Income tax ({income_tax_tax}%)                        : R${income_tax}")
-print(f"(-) INSS ({INSS_tax}%)                             : R${INSS}")
+print(f"(-) INSS ({INSS_tax}%)                            : R${INSS}")
 print(f"(-) Syndicate (3%)                          : R${syndicate}")
 print(f"FGTS (11%)                                  : R${FGTS}")
 print(f"Liquid salary                               : R${liquid_salary}")
