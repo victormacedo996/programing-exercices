@@ -1,5 +1,5 @@
 """
-print the odd numbers up to user input
+Print the odd numbers up to user input
 """
 
 def getInteger (integer):
