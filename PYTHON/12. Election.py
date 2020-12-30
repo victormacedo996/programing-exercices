@@ -38,16 +38,16 @@ while candidate1 + candidate2 + candidate3 < voters:
         candidate3 += 1
 
 if candidate1 == 1 or candidate1 == 0:
-    print(f"The first candidate revived: {candidate1} vote")
+    print(f"The first candidate recived: {candidate1} vote")
 else:
-    print(f"The first candidate revived: {candidate1} votes")
+    print(f"The first candidate recived: {candidate1} votes")
 
 if candidate2 == 1 or candidate2 == 0:
-    print(f"The second candidate revived: {candidate2} vote")
+    print(f"The second candidate recived: {candidate2} vote")
 else:
-    print(f"The second candidate revived: {candidate2} votes")
+    print(f"The second candidate recived: {candidate2} votes")
 
 if candidate3 == 1 or candidate3 == 0:
-    print(f"The third candidate revived: {candidate3} vote")
+    print(f"The third candidate recived: {candidate3} vote")
 else:
-    print(f"The third candidate revived: {candidate3} votes")
+    print(f"The third candidate recived: {candidate3} votes")
